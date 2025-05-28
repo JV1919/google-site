@@ -57,7 +57,7 @@ iframe {
     border: none;
 }
 
-/* Mobile: everything udner one-another */
+/* Mobile: everything under one-another */
 @media (max-width: 800px) {
     body {
         flex-direction: column;
