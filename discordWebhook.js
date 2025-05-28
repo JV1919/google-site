@@ -1,4 +1,4 @@
-async function webhook() {
+async function webhook(testMode) {
         const content = document.getElementById('message').value;
         const username = document.getElementById('username').value || 'DefaultBot';
 
