@@ -3,13 +3,15 @@ export default async function handler(req, res) {
     return res.status(405).json({ message: 'Method Not Allowed' });
   }
 
-  const { username, content } = req.body;
+  const { username, content, test } = req.body;
   const ip =
     req.headers['x-forwarded-for']?.split(',')[0] ||
     req.socket?.remoteAddress ||
     'Unknown IP';
 
-  const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
+  const webhookUrl = test
+    ? process.env.DISCORD_TEST_WEBHOOK_URL
+    : process.env.DISCORD_WEBHOOK_URL;
 
   if (!webhookUrl) {
     return res.status(500).json({ message: 'Webhook URL not configured' });
