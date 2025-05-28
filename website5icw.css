@@ -32,3 +32,7 @@ main {
 footer {
     font-size: small;
 }
+
+div {
+    text-align: left
+}
