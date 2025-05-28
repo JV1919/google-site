@@ -1,46 +1,113 @@
-body {
+/* Set custom font */
+@font-face {
     font-family: customFont1;
+    src: url('AudiType-Normal_03.ttf');
+}
+@font-face {
+    font-family: customFont1;
+    font-weight: bold;
+    src: url('AudiType-Bold_03.ttf');
+}
+
+/* Body styling: use flexbox to center content vertically and horizontally */
+body {
+    font-family: customFont1; /* Use custom font */
     margin: 0;
     padding: 40px 20px 20px 20px;
-    
-    /* Make body a flex container with vertical column layout */
+
+    /* Flex container: stack elements vertically */
     display: flex;
-    flex-direction: column;  /* Stack elements vertically */
-    align-items: center;     /* Center horizontally */
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
     
-    min-height: 100vh;
+    min-height: 100vh; /* Full viewport height */
     position: relative;
-    background: #ffffff;
+    background: #fff;
 }
 
-header, main, footer {
-    width: 100%;
-    max-width: 600px;        /* Limit maximum width */
+/* Header styles */
+header {
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 20px; /* Space below header */
     text-align: center;
-    margin-bottom: 20px;     /* Space between header, main, and footer */
 }
 
-/* Give footer a bit more margin on top */
+/* Main styles */
+main {
+    font-size: medium;
+    max-width: 600px; /* Limit max width */
+    width: 100%;
+    text-align: center;
+}
+
+/* Footer styles */
 footer {
-    margin-top: 40px;
+    font-size: small;
+    margin-top: 40px; /* Space above footer */
+    text-align: center;
 }
 
-/* Keep the embed fixed at top-right */
+/* Discord embed container fixed top-right */
 .discord-embed {
     position: fixed;
     top: 20px;
     right: 20px;
     width: 350px;
     height: 500px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+    box-shadow: 0 0 15px rgba(0,0,0,0.2); /* Soft shadow */
     border-radius: 8px;
     background: #000;
-    z-index: 9999;
+    z-index: 9999; /* On top of other content */
 }
 
-/* Make iframe fill the embed container */
+/* Make iframe fill embed container */
 .discord-embed iframe {
     width: 100%;
     height: 100%;
     border: none;
+}
+
+/* Input and button styling for neat form */
+input[type="text"] {
+    width: 80%;
+    padding: 6px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+button {
+    margin: 5px;
+    padding: 8px 12px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Link styles */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive: On small screens, embed flows into content */
+@media (max-width: 800px) {
+    .discord-embed {
+        position: static;
+        width: 100%;
+        height: 400px;
+        margin-bottom: 30px;
+        box-shadow: none;
+        border-radius: 0;
+        background: transparent;
+        z-index: auto;
+    }
+
+    main {
+        max-width: 100%;
+    }
 }
