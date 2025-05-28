@@ -1,80 +1,118 @@
+/* Set custom font */
 @font-face {
     font-family: customFont1;
     src: url('AudiType-Normal_03.ttf');
 }
-
 @font-face {
     font-family: customFont1;
     font-weight: bold;
     src: url('AudiType-Bold_03.ttf');
 }
 
+/* Basic body styling */
 body {
-    font-family: customFont1;
-    margin: 0;
-    padding: 20px;
-    /* no flex here */
+    font-family: customFont1; /* Use your custom font */
+    margin: 0;                /* Remove default margins */
+    padding: 40px 20px 20px 20px; /* Padding around content, more space at top */
+    
+    /* Make body a flex container that centers horizontally */
+    display: flex;
+    justify-content: center;   /* Center horizontally */
+    align-items: flex-start;   /* Align items to the top vertically */
+    
+    min-height: 100vh;         /* Minimum viewport height */
+    position: relative;        /* For potential positioning of children */
+    background: #fff;          /* Optional background color */
 }
 
+/* Main element with the form and embed container */
+main {
+    max-width: 600px;          /* Limit content width */
+    width: 100%;               /* Take full available width */
+    text-align: center;        /* Center text and form elements */
+    position: relative;        /* Positioning for children if needed */
+}
+
+/* Header styling */
 header {
     font-size: large;
     font-weight: bold;
-    margin-bottom: 20px;
-    text-align: center;
+    margin-bottom: 20px;       /* Space below header */
+    text-align: center;        /* Center header text */
 }
 
+/* Footer styling */
 footer {
     font-size: small;
-    margin-top: 40px;
-    text-align: center;
+    margin-top: 40px;          /* Space above footer */
+    text-align: center;        /* Center footer text */
 }
 
-/* flex container for main content + embed */
-.page-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-
-.main-content {
-    flex: 1 1 60%;
-    max-width: 60%;
-    text-align: left;
-    min-width: 280px;
-}
-
+/* Container for the Discord embed iframe */
 .discord-embed {
-    position: sticky;
-    top: 20px;
-    width: 350px;
-    height: 500px;
-    flex-shrink: 0;
+    /* Position embed fixed in the top-right of the screen, stays on scroll */
+    position: fixed;
+    top: 20px;                 /* 20px from top of screen */
+    right: 20px;               /* 20px from right of screen */
+    
+    width: 350px;              /* Exact width like iframe */
+    height: 500px;             /* Exact height like iframe */
+    
+    /* Optional visual styling */
+    box-shadow: 0 0 15px rgba(0,0,0,0.2); /* Soft shadow around */
+    border-radius: 8px;        /* Rounded corners */
+    background: #000;          /* Background color matching Discord widget */
+    
+    z-index: 9999;             /* Keep embed above other elements */
 }
 
-iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
+/* The embed iframe itself, fills the container */
+.discord-embed iframe {
+    width: 100%;               /* Fill full width */
+    height: 100%;              /* Fill full height */
+    border: none;              /* No border */
 }
 
-/* Mobile */
+/* Minor styling for inputs and buttons to keep layout neat */
+input[type="text"] {
+    width: 80%;                /* Wider input fields */
+    padding: 6px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+button {
+    margin: 5px;
+    padding: 8px 12px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Link styling */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive for smaller screens */
 @media (max-width: 800px) {
-    .page-container {
-        flex-direction: column;
-        padding: 0;
-    }
-
-    .main-content, .discord-embed {
-        max-width: 100%;
-        width: 100%;
-        position: static;
-        top: auto;
-    }
-
+    /* Embed no longer fixed but static at top inside content flow */
     .discord-embed {
-        margin-top: 30px;
+        position: static;
+        width: 100%;
         height: 400px;
+        margin-bottom: 30px;
+        box-shadow: none;
+        border-radius: 0;
+        background: transparent;
+        z-index: auto;
+    }
+    
+    /* Form also takes full width */
+    main {
+        max-width: 100%;
     }
 }
