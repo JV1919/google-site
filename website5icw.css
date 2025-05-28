@@ -1,0 +1,34 @@
+@font-face {
+    font-family: customFont1;
+    src: url('AudiType-Normal_03.ttf');
+}
+
+/*make fonts work*/
+@font-face {
+    font-family: customFont1;
+    font-weight: bold;
+    src: url('AudiType-Bold_03.ttf');
+}
+
+head
+{
+    font-family: customFont1;
+}
+
+body {
+    font-family: customFont1;
+    text-align: center;
+}
+
+header {
+    font-size: large;
+    font-weight: bold;
+}
+
+main {
+    font-size: medium;
+}
+
+footer {
+    font-size: small;
+}
