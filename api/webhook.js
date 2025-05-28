@@ -17,7 +17,7 @@ export default async function handler(req, res) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         username: username || 'Not Specified',
-        content: username, content,
+        content: content,
       }),
     });
 
