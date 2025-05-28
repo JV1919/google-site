@@ -3,26 +3,28 @@
     src: url('AudiType-Normal_03.ttf');
 }
 
-/*make fonts work*/
 @font-face {
     font-family: customFont1;
     font-weight: bold;
     src: url('AudiType-Bold_03.ttf');
 }
 
-head
-{
-    font-family: customFont1;
-}
-
 body {
     font-family: customFont1;
-    text-align: center;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap; /* IMPORTANT FOR MOBILE */
 }
 
 header {
     font-size: large;
     font-weight: bold;
+    margin-bottom: 20px;
+    width: 100%;
 }
 
 main {
@@ -33,6 +35,44 @@ footer {
     font-size: small;
 }
 
-div {
-    text-align: left
+.main-content {
+    flex: 1 1 60%;
+    max-width: 60%;
+    text-align: left;
+    min-width: 280px;
+}
+
+.discord-embed {
+    position: sticky;
+    top: 20px;
+    width: 350px;
+    height: 500px;
+    flex-shrink: 0;
+}
+
+/* make iframe fit nicely */
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Mobile: everything udner one-another */
+@media (max-width: 800px) {
+    body {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .main-content, .discord-embed {
+        max-width: 100%;
+        width: 100%;
+        position: static;
+        top: auto;
+    }
+
+    .discord-embed {
+        margin-top: 30px;
+        height: 400px; /* make embed smaller on mobile */
+    }
 }
