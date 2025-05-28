@@ -10,5 +10,6 @@ SITE STATUS: working
 FEATURES:
     send message to webhook
     username system
+    discord embed
 
 NEXT TASK: nothing yet, send something you want added
