@@ -4,6 +4,10 @@ export default async function handler(req, res) {
   }
 
   const { username, content } = req.body;
+  const ip =
+    req.headers['x-forwarded-for']?.split(',')[0] ||
+    req.socket?.remoteAddress ||
+    'Unknown IP';
 
   const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
 
@@ -17,7 +21,7 @@ export default async function handler(req, res) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         username: username || 'Not Specified',
-        content: content,
+        content: `${content}\n\n📍 IP-adres: ${ip}`
       }),
     });
 
