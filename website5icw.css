@@ -14,6 +14,7 @@ body {
     font-family: customFont1; /* Use custom font */
     margin: 0;
     padding: 40px 20px 20px 20px;
+    color: #fff; /*color of text on the site*/
 
     /* Flex container: stack elements vertically */
     display: flex;
@@ -22,7 +23,7 @@ body {
     
     min-height: 100vh; /* Full viewport height */
     position: relative;
-    background: #fff;
+    background: #000; /*color of background*/
 }
 
 /* Header styles */
