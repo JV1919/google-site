@@ -23,7 +23,7 @@ body {
     
     min-height: 100vh; /* Full viewport height */
     position: relative;
-    background: #000; /*color of background*/
+    background: #1E1E1E; /*color of background*/
 }
 
 /* Header styles */
@@ -59,7 +59,7 @@ footer {
 
     box-shadow: 0 0 15px rgba(0,0,0,0.2); /* Soft shadow */
     border-radius: 8px;
-    background: #1D1D1F;
+    background: #000;
     z-index: 9999; /* On top of other content */
 }
 
@@ -87,7 +87,7 @@ button {
 
 /* Link styles */
 a {
-    color: ##7289DA;
+    color: #007bff;
     text-decoration: none;
 }
 
