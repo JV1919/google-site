@@ -59,7 +59,7 @@ footer {
 
     box-shadow: 0 0 15px rgba(0,0,0,0.2); /* Soft shadow */
     border-radius: 8px;
-    background: #1c1d22;
+    background: #1D1D1F;
     z-index: 9999; /* On top of other content */
 }
 
